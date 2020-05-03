@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+month=`date -v-1d '+%b'`
+day=`date -v-1d '+%-d'`
+year=`date -v-1d '+%Y'`
+
+fulldate="${month,,}-${day}-${year}"
+fullURL="https://www.mass.gov/doc/covid-19-raw-data-${fulldate}/download"
+
+fullPath="./reports/${fulldate}"
+
+
+echo $fullURL
+
+wget -O ./reports/zipped ${fullURL}
+unzip -d $fullPath ./reports/zipped
+rm ./reports/zipped
+
+
