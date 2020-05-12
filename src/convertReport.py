@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import pandas as pd
 from pathlib import Path
@@ -36,7 +36,7 @@ def get_csv_names(path):
 def generate_reports():
     report_obj = {}
     for report_path in get_report_files_names():
-        formated_date = get_date_from_name(report_path)
+        formated_date = report_path
         report_obj[formated_date] = {}
         for report_aspect in get_csv_names(report_path):
             report_obj[formated_date][format_csv_file_name(report_aspect)] = generate_report(report_path, report_aspect)

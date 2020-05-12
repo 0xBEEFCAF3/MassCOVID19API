@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+fullURL="https://www.mass.gov/doc/covid-19-raw-data-${1}/download"
+
+fullPath="./reports/${1}"
+
+
+echo $fullURL
+
+wget -O ./reports/zipped ${fullURL}
+unzip -d $fullPath ./reports/zipped
+rm ./reports/zipped
+
+

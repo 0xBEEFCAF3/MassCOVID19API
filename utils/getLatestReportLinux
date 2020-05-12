@@ -6,7 +6,7 @@ year=`date  -d "1 day ago" '+%Y'`
 
 fulldate="${month,,}-${day}-${year}"
 fullURL="https://www.mass.gov/doc/covid-19-raw-data-${fulldate}/download"
-echo $fulldate
+
 fullPath="./reports/${fulldate}"
 
 
