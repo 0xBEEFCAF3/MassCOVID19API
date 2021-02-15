@@ -1,1 +1,1 @@
-web: FLASK_APP=src/server.py && flask run
+web: FLASK_APP=src/server.py flask run
