@@ -9,7 +9,7 @@ import json
 current_time = datetime.now() - timedelta(days=1)
 formatedTime = str(current_time.strftime('%b')) + "-" + str(current_time.day) + "-" + str(current_time.year)
 
-def generate_reports():
+def generate_daily_report():
     report_obj = {}
     df = pd.ExcelFile('./reports/'+formatedTime+'.xlsx', engine='openpyxl')
     sheets = df.sheet_names
@@ -22,7 +22,9 @@ def generate_reports():
             return o.__str__()
     return str(json.dumps(jsonDump, default=dateConverter)).replace('NaN', '0')
 
-# def write_report():
-#     report = generate_reports()
+def write_report():
+    report = generate_daily_report()
+    with open('./reports/daily_final.json', 'w') as f:
+        json.dump(report, f)
 
-print(generate_reports())
+print(write_report())
