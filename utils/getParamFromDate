@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 
 fullURL="https://www.mass.gov/doc/covid-19-raw-data-${1}/download"

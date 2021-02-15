@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 month=`date -d "1 day ago" '+%b'`
 day=`date  -d "1 day ago" '+%-d'`

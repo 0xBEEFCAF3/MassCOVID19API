@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+month=`date -v -1d '+%b'`
+day=`date -v -1d '+%-d'`
+year=`date -v -1d '+%Y'`
+
+fulldate="${month}-${day}-${year}"
+echo $fulldate
+fullURL="https://www.mass.gov/doc/covid-19-raw-data-february-14-2021/download"
+fullPath="./reports/${fulldate}"
+
+echo $fullURL
+wget -P './reports/' ${fullURL}
+mv './reports/download' ./reports/$fulldate.xlsx
+
