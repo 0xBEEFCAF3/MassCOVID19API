@@ -1,1 +1,1 @@
-web: FLASK_APP=src/server.py flask run
+web: gunicorn wsgi:app
